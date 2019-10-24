@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  minter:
+    build:
+      context: .
+      args:
+        VERSION: 1.0.4
+#    image: my-user/minter-node:1.0.4
+    volumes:
+      - /opt/stacks/minter/data:/minter
+    ports:
+      - "8841:8841"
+      - "3000:3000"
+    command: node

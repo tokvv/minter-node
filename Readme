@@ -1,0 +1,10 @@
+HOW TO BUILD
+
+MAINNET
+export VERSION="1.0.4" && docker build -t my-user/minter-node:$VERSION --build-arg VERSION=$VERSION .
+
+TESTNET
+export VERSION="1.0.4-testnet" && docker build -t my-user/minter-node:$VERSION --build-arg VERSION=$VERSION .
+
+HOW TO RUN
+mkdir -p /minter && chown -R 1000:1000 /minter && docker run -d --rm -v /minter:/minter --net host --name minter-node my-user/minter-node:$VERSION node
