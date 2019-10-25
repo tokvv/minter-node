@@ -21,7 +21,6 @@ RUN curl -OL https://github.com/google/leveldb/archive/v1.20.tar.gz && \
 
 ARG VERSION
 
-VOLUME [ $MINTERHOME ]
 WORKDIR $MINTERHOME
 
 RUN export DOWNLOAD_URL="https://github.com/MinterTeam/minter-go-node/releases/download/v${VERSION}/minter_$(echo ${VERSION} | sed -E 's/[a-z\-]+//')_linux_amd64.zip" && \
